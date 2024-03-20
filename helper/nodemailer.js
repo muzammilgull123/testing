@@ -34,4 +34,7 @@ const sendOTPByEmail = async (name, recipientEmail, otp,secret,secretejson) => {
   }
 };
 
+// ldnmlkfnblfdm;sd,v;fsm'lv
+// lvf
+
 module.exports = sendOTPByEmail;

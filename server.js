@@ -95,30 +95,3 @@ app.post('/verify', async (req, res) => {
 });
 
 
-const express = require("express")
-const verifyToken = require('../middlewares/verifyToken')
-// const app = express
-const slackrouter = express.Router()
-
-
-const { githubcall, githubWebhook, } = require("../controllers/githubController")
-const { webhookresult } = require("../services/githubServices")
-const { slackCallBack, LoginToSlackApp, slackAccessToken, getSlackAccounts, channelId, addChannelId } = require("../controllers/slackController")
-
-
-slackrouter.get('/login/slack',LoginToSlackApp)
-slackrouter.get('/slack/callback', slackCallBack)
-
-slackrouter.post ('/webhook/github',webhookresult)
-slackrouter.post ('/accesstoken',slackAccessToken)
-slackrouter.get ('/getslackaccount',getSlackAccounts)
-slackrouter.post('/chanelid',addChannelId)
-
-
-
-
-// slackrouter.get('/login/slack',);
-  
-
-
-module.exports = slackrouter;
